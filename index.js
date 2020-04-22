@@ -8,9 +8,9 @@ app.use(express.json());
 
 app.use('/api', apiRouter);
 
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
-});
+// app.get('/', (req, res) => {
+//   res.sendFile(__dirname + '/index.html');
+// });
 
 io.on('connection', (socket) => {
   console.log('a user connected');
@@ -20,8 +20,8 @@ io.on('connection', (socket) => {
 //   io.emit("displayMessage", msg)
 // })
 
-http.listen(3000, () => {
-  console.log('listening on *:3000');
+http.listen(8000, () => {
+  console.log('listening on *:8000');
 });
 
 app.use((err, req, res, next) => {
